@@ -1,0 +1,16 @@
+body
+{
+	background-color : #113344;
+	color:#ffffff;
+	height: 100%;
+	width:100%;
+	border-collapse:collapse;
+	text-align: center;
+	vertical-align: middle; 
+}
+
+footer
+{
+	display:flex;
+	justify-content: center;
+}
