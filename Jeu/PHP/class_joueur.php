@@ -75,6 +75,21 @@ class Joueur
 	{
 		return ($this->getPseudo()==$joueur->getPseudo());
 	}
-}
 
+	public function hydrate(array $donnees)
+	{
+		foreach ($donnees as $key => $value)
+		{
+			//On récupère le nom du setter correcpondant à l'attribut.
+			$method = 'set'.ucfirst($key);
+
+			//Si le setter correspondant existe.
+			if (method_exists($this, $method))
+			{
+				//On appelle le setter.
+				$this->$method($value);
+			}
+		}
+	}
+}
 ?>
