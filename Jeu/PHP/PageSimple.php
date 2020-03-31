@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require_once 'modeleJoueur.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +22,12 @@
 		<?php
 			if (isset($_SESSION["Joueur"]))
 			{
-				echo "Bonjour ".$SESSION['Joueur']->Pseudo.".";
+				echo "<h2>Bonjour ".$_SESSION['Joueur'].".</h2><br/>";
 			}
 		?>
 
 
-		<a href="../index.php">Accueil</a><br/>
+		<a href="./Deconnexion.php">Deconnexion</a><br/>
 		<footer>
 		<h3>Contacts :</h3>
 			<ul><li>r.schlotter@ludus-academie.com</li>

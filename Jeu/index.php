@@ -2,20 +2,17 @@
 	require_once "PHP/ConnexionALaBDD.php";
 	$connexion=ConnexionBDD();
 	require_once 'PHP/modeJoueurManager.php';
-	require_once 'PHP/modeleJoueurManager.php';
+	require_once 'PHP/modeleJoueur.php';
 	if (isset($_REQUEST['Pseudo']) AND isset($_REQUEST['MDP']))
 	{
-		$Joueur = new Joueur;
-		$Joueur = getJoueurByPseudoAndMdp($_REQUEST['Pseudo'],$_REQUEST['MDP']);
-		if (isset($Joueur) AND !is_null($Joueur))
+		$Manager = new JoueurManager($connexion);
+		$Joueur = $Manager->getJoueurByPseudoAndMdp($_REQUEST['Pseudo'],$_REQUEST['MDP']);
+		if (isset($Joueur) AND !empty($Joueur))
 		{
 			session_start();
-			$_SESSION["Joueur"]=$Joueur;
-			if (isset($_SESSION["Joueur"]))
-			{
-				header('Location:PHP/PageSimple.php');
-				exit();
-			}
+			$_SESSION["Joueur"]=$_REQUEST['Pseudo'];
+			header('Location:PHP/PageSimple.php');
+			exit();
 		}
 	}
 ?>
@@ -36,20 +33,17 @@
 	<BODY>
 		<h1>Bienvenue !</h1>
 
-		<form id='connexion' name='connexion' method='GET' autocomplete="on" action="PHP/PageSimple.php"> <!--La méthode changera plus tard en post.-->
+		<form id='connexion' name='connexion' method='GET' autocomplete="on" action="#"> <!--La méthode changera plus tard en post.-->
 		<fieldset>
 			<LEGEND>Connexion : </LEGEND>
 			<div><label for="Pseudo">Pseudonyme : </label>
 			<input type="text" name="Pseudo" id="Pseudo" required></input></div>
 			<div><label for="MDP">Mot de passe : </label>
 			<input type="password" name="MDP" id="MDP" required></input></div><br/>
-			<div><input type="submit" class="boutonsFormulaires" name="submit" value="Connexion"></div>
+			<div><input type="submit" class="boutonsFormulaires" name="submit" value="Connexion" style="left: 0%">
+				<input type="button" class="boutonsFormulaires" name="inscription" value="Inscription" onclick="location.href='PHP/Inscription.php'" style="right: 0%"></div>
 		</fieldset>
 		</form>
-
-
-
-		<a href="PHP/Inscription.php">Inscription</a><br/>
 		<footer>
 		<h3>Contacts :</h3>
 			<ul><li>r.schlotter@ludus-academie.com</li>

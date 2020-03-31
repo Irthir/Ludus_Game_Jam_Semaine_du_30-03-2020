@@ -1,7 +1,9 @@
 <?php
 	require "ConnexionALaBDD.php";
 	$connexion=ConnexionBDD();
+	require_once 'modeleJoueur.php';
 	require_once 'modeJoueurManager.php';
+	require_once 'InscriptionCode.php';
 ?>
 <!DOCTYPE html>
 <HTML>
@@ -19,27 +21,22 @@
 	<BODY>
 		<h1>Inscription</h1>
 
-		<?php
-			$mareq='SELECT * FROM joueur;';
-			$statement=$connexion->prepare($mareq);
-			$statement->execute();
-			$nb=$statement->rowcount();
-			if ($nb>0)
-			{
-				$result = $statement->setFetchMode(PDO::FETCH_ASSOC);
-				//vérifier result si le fetch a fonctionné.
-				echo "<table class='TableAffiche'><caption>".$table."</caption><thead><tr>";
-				foreach (array_keys($statement->fetchAll()[0]) as $value)
-				//Vérifier le fetchAll et le array keys
-				{
-					//note ucfirt() à réviser.
-					echo "<th>".$value."</th>";
-				}
-				echo "</tr></thead>";
-				echo "</tbody>";
-				echo "</table>";
-			}
-		?>
+		<form id='inscription' name='inscription' method='GET' autocomplete="on" action="#"> <!--La méthode changera plus tard en post.-->
+		<fieldset>
+			<LEGEND>Inscription : </LEGEND>
+			<div><label for="Pseudo">Pseudonyme : </label>
+			<input type="text" name="Pseudo" id="Pseudo" required></input></div>
+			<div><label for="MDP">Mot de passe : </label>
+			<input type="password" name="MDP" id="MDP" required></input></div>
+			<div><label for="Email">Email : </label>
+			<input type="mail" name="Email" id="Email"></input></div>
+			<div><label for="DDN">Date de Naissance : </label>
+			<input type="Date" name="DDN" id="DDN"></input></div>
+			<br/>
+			<div><input type="submit" class="boutonsFormulaires" name="submit" value="Valider" style="left: 0%">
+				<input type="reset" class="boutonsFormulaires" name="reset" value="Réinitialiser" onclick="location.href='PHP/Inscription.php'" style="right: 0%"></div>
+		</fieldset>
+		</form>
 
 
 		<a href="../index.php">Accueil</a><br/>

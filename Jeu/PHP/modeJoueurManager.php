@@ -61,28 +61,29 @@
 			//Récupérer la connexion
 			global $connexion;
 
-			$req = "SELECT EXISTS(SELECT * FROM Joueur WHERE Pseudo=$pseudo AND MDP=$mdp)";
+			$req = "SELECT Pseudo, MDP, Email, DDN FROM Joueur WHERE Pseudo IN ('$pseudo') AND MDP IN ('$mdp')";
 			try
 			{
+				$stmt= $connexion->prepare($req); //On prépare la requête dans un statement, avec la connexion.
 				//Exécuter la requête
 				$stmt->execute();
 
 				$nb=$stmt->rowcount();
-				$stmt->setFetchMode(PDO::FETCH_ASSOC);
+				$result=$stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 				if ($nb==1)
 				{
-					$mJoueur = $array
+					/*$mJoueur = array
 					(
-						"Joueur" => $stmt["pseudo"],
-						"MDP" => $stmt["mdp"],
-						"Email" => $stmt["email"],
-						"DDN" => $stmt["ddn"]),
-					);
+						"Joueur" => $result['Pseudo'],
+						"MDP" => $result['MDP'],
+						"Email" => $result['Email'],
+						"DDN" => $result['DDN']
+					);*/
 					
-					$JoueurActuel = new Joueur;
+					$JoueurActuel = new Joueur($result['Pseudo'],$result['MDP'],$result['Email'],$result['DDN']);;
 
-					$JoueurActuel->hydrate($mJoueur);
+					//$JoueurActuel->hydrate($mJoueur);
 
 					return $JoueurActuel;
 				}
@@ -106,7 +107,7 @@
 			}
 			catch(PDOException $e)
 			{
-				echo "Erreur : ".e.getMessage();
+				echo "Erreur : ".$e->getMessage();
 			}
 		}
 		/***ATTENTION***/
