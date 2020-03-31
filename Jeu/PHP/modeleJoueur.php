@@ -1,6 +1,6 @@
 <?php
 	/*Classe Joueur en PHP*/
-	
+
 	class Joueur
 	{
 		/*Les membres de Joueur*/

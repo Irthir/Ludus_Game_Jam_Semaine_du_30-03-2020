@@ -1,3 +1,8 @@
+<?php
+	require "ConnexionALaBDD.php";
+	$connexion=ConnexionBDD();
+	require_once 'modeJoueurManager.php';
+?>
 <!DOCTYPE html>
 <HTML>
 	<HEAD> <!--Information de configuration : encodage, langue,...-->
@@ -14,6 +19,30 @@
 	<BODY>
 		<h1>Inscription</h1>
 
+		<?php
+			$mareq='SELECT * FROM joueur;';
+			$statement=$connexion->prepare($mareq);
+			$statement->execute();
+			$nb=$statement->rowcount();
+			if ($nb>0)
+			{
+				$result = $statement->setFetchMode(PDO::FETCH_ASSOC);
+				//vérifier result si le fetch a fonctionné.
+				echo "<table class='TableAffiche'><caption>".$table."</caption><thead><tr>";
+				foreach (array_keys($statement->fetchAll()[0]) as $value)
+				//Vérifier le fetchAll et le array keys
+				{
+					//note ucfirt() à réviser.
+					echo "<th>".$value."</th>";
+				}
+				echo "</tr></thead>";
+				echo "</tbody>";
+				echo "</table>";
+			}
+		?>
+
+
+		<a href="../index.php">Accueil</a><br/>
 		<footer>
 		<h3>Contacts :</h3>
 			<ul><li>r.schlotter@ludus-academie.com</li>

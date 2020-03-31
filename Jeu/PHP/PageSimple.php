@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <HTML>
 	<HEAD> <!--Information de configuration : encodage, langue,...-->
@@ -14,6 +18,15 @@
 	<BODY>
 		<h1>Ceci est une page PHP.</h1>
 
+		<?php
+			if (isset($_SESSION["Joueur"]))
+			{
+				echo "Bonjour ".$SESSION['Joueur']->Pseudo.".";
+			}
+		?>
+
+
+		<a href="../index.php">Accueil</a><br/>
 		<footer>
 		<h3>Contacts :</h3>
 			<ul><li>r.schlotter@ludus-academie.com</li>

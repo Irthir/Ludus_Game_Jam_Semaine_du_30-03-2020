@@ -12,7 +12,7 @@
 		    $conn = new PDO($dsn,USERNAME,PASSWORD);
 		    // set the PDO error mode to exception
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    echo "Connexion réussie à la base ".DBNAME." !"; //Si l'erreur n'est pas catch, on envoie ce message.
+		    echo "<script>console.log('Connexion réussie à la base ".DBNAME." !');</script>"; //Si l'erreur n'est pas catch, on envoie ce message.
 		}
 		catch(PDOException $e) //Block catch à voir ce que c'est.
 		{

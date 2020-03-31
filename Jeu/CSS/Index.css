@@ -7,6 +7,11 @@ body
 	vertical-align: middle; 
 }
 
+fieldset
+{
+	display: inline-block;
+}
+
 footer
 {
 	display:flex;
