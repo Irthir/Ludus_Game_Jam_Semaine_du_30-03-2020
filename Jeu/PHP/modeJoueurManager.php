@@ -49,7 +49,8 @@
 			}
 			catch(PDOException $e)
 			{
-				echo "Erreur : ".e.getMessage();
+				echo "<script>console.log(\"Erreur : ".$e->getMessage()."\");</script>";
+				echo "<h2 style='color : red'>Pseudonyme : \"".$joueur->getPseudo()."\" déjà enregistré, était-ce vous ?</h2>";
 			}
 		}
 
