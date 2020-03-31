@@ -45,7 +45,7 @@
 				$stmt->closeCursor();
 
 				//On indique que l'insertion s'est bien passée
-				echo "<script>console.log('Insertion des données joueur effectuée');</script>";
+				echo "<script>console.log(\"Insertion des données joueur effectuée\");</script>";
 			}
 			catch(PDOException $e)
 			{
@@ -62,7 +62,7 @@
 			//Récupérer la connexion
 			global $connexion;
 
-			$req = "SELECT Pseudo, MDP, Email, DDN FROM Joueur WHERE Pseudo IN ('$pseudo') AND MDP IN ('$mdp')";
+			$req = "SELECT Pseudo, MDP, Email, DDN FROM Joueur WHERE Pseudo IN (\"$pseudo\") AND MDP IN (\"$mdp\")";
 			try
 			{
 				$stmt= $connexion->prepare($req); //On prépare la requête dans un statement, avec la connexion.
@@ -91,19 +91,20 @@
 				elseif ($nb<1)
 				{
 					//On indique qu'il y a eu un problième dans la récupération du joueur.
-					echo "<script>console.log('Aucun résultat pour : Pseudo = $pseudo MDP = $mdp.');</script>";
+					echo "<script>console.log(\"Aucun résultat pour : Pseudo = $pseudo MDP = $mdp.\");</script>";
+					echo "<h2 style='color : red'>Pseudonyme ou mot de passe incorrect.</h2>";
 				}
 				else
 				{
 					//On indique qu'il y a eu un problième dans la récupération du joueur.
-					echo "<script>console.log('Erreur critique, plusieurs joueurs ayant le même pseudonyme et mot de passe existes : Pseudo = $pseudo MDP = $mdp.');</script>";
+					echo "<script>console.log(\"Erreur critique, plusieurs joueurs ayant le même pseudonyme et mot de passe existes : Pseudo = $pseudo MDP = $mdp.\");</script>";
 				}
 
 				//On referme la base
 				$stmt->closeCursor();
 
 				//On indique que l'insertion s'est bien passée
-				echo "<script>console.log('Requête \"$req\" effectuée');</script>";
+				echo "<script>console.log(\"Requête effectuée.\");</script>";
 
 			}
 			catch(PDOException $e)
