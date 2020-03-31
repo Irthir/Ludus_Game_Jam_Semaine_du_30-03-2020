@@ -1,6 +1,11 @@
+<?php
+	require "PHP/ConnexionALaBDD.php";
+	$connexion=ConnexionBDD();
+	/*if(isset($connexion))
+		echo "Connexion réussit à la base de donnée.";*/
+?>
 <!DOCTYPE html>
 <HTML>
-
 	<HEAD> <!--Information de configuration : encodage, langue,...-->
 		<!--Méthode d'insertion du style dans le HEAD-->
 		<style type="text/css"></style>
@@ -14,7 +19,6 @@
 
 	<BODY>
 		<h1>GameJam du 30/03/2020</h1>
-
 
 
 		<a href="PHP/Inscription.php">Inscription</a><br/>
