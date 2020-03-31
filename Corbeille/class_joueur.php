@@ -25,7 +25,7 @@ class Joueur
 	/*Le destructeur*/
 	public function __destruct()
 	{
-
+		echo "<script>console.log('Destruction de la classe Joueur');<script>";
 	}
 
 	/*Les getters*/

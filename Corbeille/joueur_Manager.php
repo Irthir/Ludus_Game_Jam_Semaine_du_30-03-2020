@@ -1,6 +1,6 @@
 <?php
 	
-	require 'class_joueur.php';
+	require_once 'class_joueur.php';
 
 	function addJoueur(Joueur $joueur)
 	{
