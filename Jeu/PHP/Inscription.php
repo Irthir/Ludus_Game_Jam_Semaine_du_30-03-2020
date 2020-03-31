@@ -8,15 +8,18 @@
 		<link rel="shortcut icon" type="image/x-icon" href="../Contenus/images/cirno9.jpg"/>
 		<meta charset="utf-8"/>
 		<lang="fr"/>
-		<TITLE>Page Simple</TITLE>
+		<TITLE>Inscription</TITLE>
 	</HEAD>
 
 	<BODY>
-		<h1>Ceci est une page PHP.</h1>
+		<h1>Inscription</h1>
 
 		<footer>
-			Contact : r.schlotter@ludus-académie.com<br/>
-			Téléphone : +33624202366
-		</footer>	
+		<h3>Contacts :</h3>
+			<ul><li>r.schlotter@ludus-academie.com</li>
+			<li>g.piou@ludus-academie.com</li>
+			<li>o.viceconte@ludus-academie.com</li>
+			<li>j.zumkir@ludus-academie.com</li></ul>
+		</footer>
 	</BODY>
 </HTML>

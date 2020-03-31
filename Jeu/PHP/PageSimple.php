@@ -15,8 +15,11 @@
 		<h1>Ceci est une page PHP.</h1>
 
 		<footer>
-			Contact : r.schlotter@ludus-académie.com<br/>
-			Téléphone : +33624202366
-		</footer>	
+		<h3>Contacts :</h3>
+			<ul><li>r.schlotter@ludus-academie.com</li>
+			<li>g.piou@ludus-academie.com</li>
+			<li>o.viceconte@ludus-academie.com</li>
+			<li>j.zumkir@ludus-academie.com</li></ul>
+		</footer>
 	</BODY>
 </HTML>

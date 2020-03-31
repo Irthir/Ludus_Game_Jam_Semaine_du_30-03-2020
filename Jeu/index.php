@@ -9,19 +9,22 @@
 		<link rel="shortcut icon" type="image/x-icon" href="../Contenus/images/cirno9.jpg"/>
 		<meta charset="utf-8"/>
 		<lang="fr"/>
-		<TITLE>Index du Jeu</TITLE>
+		<TITLE>Connexion</TITLE>
 	</HEAD>
 
 	<BODY>
-		<h1>Index du Jeu</h1>
+		<h1>GameJam du 30/03/2020</h1>
 
-		<h2>Cette page sert d'index pour accéder aux divers page de notre hôte virtuel !</h2>
 
+
+		<a href="PHP/Inscription.php">Inscription</a><br/>
 		<a href="PHP/PageSimple.php">Page Simple</a><br/>
-
 		<footer>
-			Contact : r.schlotter@ludus-académie.com<br/>
-			Téléphone : +33624202366
-		</footer>	
+		<h3>Contacts :</h3>
+			<ul><li>r.schlotter@ludus-academie.com</li>
+			<li>g.piou@ludus-academie.com</li>
+			<li>o.viceconte@ludus-academie.com</li>
+			<li>j.zumkir@ludus-academie.com</li></ul>
+		</footer>
 	</BODY>
 </HTML>
