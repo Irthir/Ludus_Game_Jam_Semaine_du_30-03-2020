@@ -51,10 +51,6 @@
 			{
 				echo $Oubli;
 			}
-			else
-			{
-				echo "Not Set";
-			}
 		?>
 		<footer>
 		<h3>Contacts :</h3>
