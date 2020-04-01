@@ -34,9 +34,17 @@
 			<input type="Date" name="DDN" id="DDN"></input></div>
 			<br/>
 			<div><input type="submit" class="boutonsFormulaires" name="submit" value="Valider" style="left: 0%">
-				<input type="reset" class="boutonsFormulaires" name="reset" value="Réinitialiser" onclick="location.href='PHP/Inscription.php'" style="right: 0%"></div>
+				<input type="reset" class="boutonsFormulaires" name="reset" value="Réinitialiser" onclick="location.href='Inscription.php'" style="right: 0%"></div>
 		</fieldset>
 		</form>
+
+		<script type="text/javascript">
+			function verifSubmit()
+			{
+				var ddn=document.getElementsByTagName('DDN');
+				console.log(new Date()>ddn);
+			}
+		</script>
 
 
 		<a href="../index.php">Accueil</a><br/>

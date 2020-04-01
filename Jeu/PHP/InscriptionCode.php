@@ -8,23 +8,23 @@
 	{
 		$Manager = new JoueurManager($connexion);
 
-		$joueur = new Joueur($_REQUEST["Pseudo"],$_REQUEST["MDP"],$_REQUEST["Email"],$_REQUEST["DDN"]);
-		$Manager->addJoueur($joueur);
+		//$joueur = new Joueur($_REQUEST["Pseudo"],$_REQUEST["MDP"],$_REQUEST["Email"],$_REQUEST["DDN"]);
 
 		//Tableau des valeurs du client à créer
-		/*$mJoueur = array
+		$mJoueur = array
 		(
-			"Joueur" => $_REQUEST["Pseudo"],
+			"Pseudo" => $_REQUEST["Pseudo"],
 			"MDP" => $_REQUEST["MDP"],
 			"Email" => $_REQUEST["Email"],
 			"DDN" => $_REQUEST["DDN"]
 		);
-		
+
 		$joueur = new Joueur;
 
 		$joueur->hydrate($mJoueur);
 
-		addJoueur($oueur);*/
+		$Manager->addJoueur($joueur);
 
+		echo "<h2 style='color : green'>Inscription réussie !</h2>";
 	}
 ?>

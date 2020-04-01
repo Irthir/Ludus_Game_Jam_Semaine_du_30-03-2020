@@ -25,7 +25,7 @@
 			//Récupérer la connexion
 			global $connexion;
 
-			$req = "INSERT INTO Joueur (Pseudo, MDP, Email,DDN) VALUES 
+			$req = "INSERT INTO Joueur (Pseudo, MDP, Email,DDN) VALUES
 					(:PSEUDO,:MDP,:MAIL,:DDN)";
 
 			try
@@ -54,8 +54,6 @@
 			}
 		}
 
-		/***ATTENTION***/
-		/*Cette fonction est encore en phase de test.*/
 		//Retourne un joueur si le pseudo et le mdp sont corrects
 		public function getJoueurByPseudoAndMdp($pseudo,$mdp)
 		{
@@ -74,17 +72,17 @@
 
 				if ($nb==1)
 				{
-					/*$mJoueur = array
+					$mJoueur = array
 					(
-						"Joueur" => $result['Pseudo'],
+						"Pseudo" => $result['Pseudo'],
 						"MDP" => $result['MDP'],
 						"Email" => $result['Email'],
 						"DDN" => $result['DDN']
-					);*/
-					
-					$JoueurActuel = new Joueur($result['Pseudo'],$result['MDP'],$result['Email'],$result['DDN']);;
+					);
 
-					//$JoueurActuel->hydrate($mJoueur);
+					$JoueurActuel = new Joueur;//($result['Pseudo'],$result['MDP'],$result['Email'],$result['DDN']);;
+
+					$JoueurActuel->hydrate($mJoueur);
 
 					return $JoueurActuel;
 				}
@@ -112,7 +110,6 @@
 				echo "Erreur : ".$e->getMessage();
 			}
 		}
-		/***ATTENTION***/
 
 		//Retourne la liste de tous les clients
 		public function getListeJoueur()
@@ -137,27 +134,5 @@
 			$this->_db->exec('DELETE FROM JOUEUR WHERE PSEUDO = '.$id);
 		}
 	}
-
-//A ajouter dans la page de création de joueur :
-	/*if (isset($_REQUEST["Pseudo"]) and !empty($_REQUEST["Pseudo"]))
-	{
-		/*$joueur = new Joueur($_REQUEST["Pseudo"],$_REQUEST["MDP"],$_REQUEST["Email"],$_REQUEST["DDN"]);
-		addJoueur($Joueur);*/
-
-		/*Tableau des valeurs du client à créer*/
-		/*$mJoueur = $array
-		(
-			"Joueur" => $_REQUEST["Pseudo"],
-			"MDP" => $_REQUEST["MDP"],
-			"Email" => $_REQUEST["Email"],
-			"DDN" => $_REQUEST["DDN"]),
-		);
-		
-		$joueur = new Joueur;
-
-		$joueur->hydrate($mJoueur);
-
-		addJoueur($Joueur);*/
-	/*}*/
 
 ?>

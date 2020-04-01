@@ -14,13 +14,13 @@
 		private $DDN;
 
 		/*Le constructeur*/
-		public function __construct($pseudo,$mdp,$mail,$ddn)
+		/*public function __construct($pseudo,$mdp,$mail,$ddn)
 		{
 			$this->Pseudo = (string)$pseudo; //cast vers string
 			$this->MDP = (string)$mdp;
 			$this->Email = (string)$mail;
 			$this->DDN = date('Y-m-d',strtotime($ddn));
-		}
+		}*/
 
 		/*Le destructeur*/
 		public function __destruct()
@@ -69,7 +69,7 @@
 		{
 			return "Joueur : Pseudo=".$this->getPseudo().", MDP=".$this->getNom().". Email=".$this->getEmail().", DDN=".$this->getDDN().".";
 		}
-		
+
 		/*Fonction de comparaison entre Joueurs*/
 		public function equals(Joueur $joueur)
 		{
