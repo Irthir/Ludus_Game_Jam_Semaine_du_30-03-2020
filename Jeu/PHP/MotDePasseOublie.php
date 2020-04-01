@@ -5,7 +5,8 @@
 	require_once 'modeleJoueur.php';
 	if (isset($_REQUEST['Pseudo']) AND isset($_REQUEST['MDP']))
 	{
-		echo "Prout.";
+		$Manager = new JoueurManager($connexion);
+		$Joueur = $Manager->updateJoueurMDP($_REQUEST['Pseudo'],$_REQUEST['MDP']);
 	}
 ?>
 
