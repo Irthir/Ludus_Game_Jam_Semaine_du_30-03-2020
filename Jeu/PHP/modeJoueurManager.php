@@ -46,11 +46,14 @@
 
 				//On indique que l'insertion s'est bien passée
 				echo "<script>console.log(\"Insertion des données joueur effectuée\");</script>";
+				echo "<h2 style='color : green'>Inscription réussie !</h2>";			
 			}
 			catch(PDOException $e)
 			{
 				echo "<script>console.log(\"Erreur : ".$e->getMessage()."\");</script>";
 				echo "<h2 style='color : red'>Pseudonyme : \"".$joueur->getPseudo()."\" déjà enregistré, était-ce vous ?</h2>";
+				global $Oubli;
+				$Oubli="<a href='./MotDePasseOublie.php'>Mot de passe oublié ?</a><br/>";
 			}
 		}
 
@@ -91,6 +94,8 @@
 					//On indique qu'il y a eu un problième dans la récupération du joueur.
 					echo "<script>console.log(\"Aucun résultat pour : Pseudo = $pseudo MDP = $mdp.\");</script>";
 					echo "<h2 style='color : red'>Pseudonyme ou mot de passe incorrect.</h2>";
+					global $Oubli;
+					$Oubli="<a href='./PHP/MotDePasseOublie.php'>Mot de passe oublié ?</a><br/>";
 				}
 				else
 				{
@@ -118,9 +123,24 @@
 		}
 
 		//Update un client
-		public function updateJoueur()
+		public function updateJoueurMDP($pseudo,$mdp)
 		{
+			//Récupérer la connexion
+			global $connexion;
 
+			$req = "UPDATE Joueur SET MDP=\"$mdp\" WHERE Pseudo IN (\"$pseudo\")";
+			try
+			{
+				$stmt= $connexion->prepare($req); //On prépare la requête dans un statement, avec la connexion.
+				//Exécuter la requête
+				$stmt->execute();
+			}
+			catch(PDOException $e)
+			{
+				echo "Erreur : ".$e->getMessage();
+				echo "<h2 style='color : red'>Erreur, mise à jour du mot de passe impossible.</h2>";
+			}
+			echo "<h2 style='color : green'>Votre mot de passe a bien été mis à jour.</h2>";
 		}
 
 		//Supprimer un Joueur

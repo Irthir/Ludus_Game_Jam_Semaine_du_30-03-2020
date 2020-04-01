@@ -24,7 +24,5 @@
 		$joueur->hydrate($mJoueur);
 
 		$Manager->addJoueur($joueur);
-
-		echo "<h2 style='color : green'>Inscription réussie !</h2>";
 	}
 ?>

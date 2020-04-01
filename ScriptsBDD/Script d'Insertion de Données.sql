@@ -15,4 +15,4 @@ ALTER TABLE Partie ADD Score INT, Minutes INT, Secondes INT, Millisecondes INT;
 INSERT INTO Niveau
 (IDNiveau,NomDifficulte)
 VALUES
-("","Facile");
+("Niveau1","Facile");

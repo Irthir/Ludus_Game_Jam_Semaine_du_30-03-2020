@@ -38,14 +38,15 @@
 		</fieldset>
 		</form>
 
-		<script type="text/javascript">
-			function verifSubmit()
-			{
-				var ddn=document.getElementsByTagName('DDN');
-				console.log(new Date()>ddn);
-			}
-		</script>
+		<p name="MotDePasseOublie" id="MotDePasseOublie"></p>
 
+		<script type="text/javascript" src="../JS/PasseOublie.js"></script>
+		<?php
+			if (isset($Oubli))
+			{
+				echo $Oubli;
+			}
+		?>
 
 		<a href="../index.php">Accueil</a><br/>
 		<footer>
