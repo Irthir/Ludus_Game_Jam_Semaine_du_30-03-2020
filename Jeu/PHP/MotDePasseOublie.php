@@ -26,7 +26,7 @@
 	<BODY>
 		<h1>Réinitialisation du Mot De Passe</h1>
 
-		<div>Veuillez rentrer votre pseudo et votre nouveau mot de passe.</div>
+		<div>Veuillez rentrer votre pseudo et votre nouveau mot de passe.</div><br/>
 
 		<form id='Réinitialisation' name='Réinitialisation' method='GET' autocomplete="on" action="#"> <!--La méthode changera plus tard en post.-->
 		<fieldset>
