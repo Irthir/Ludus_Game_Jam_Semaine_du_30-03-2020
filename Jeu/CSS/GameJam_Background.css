@@ -1,0 +1,133 @@
+/* Ajout font */
+@font-face {
+    font-family: 'syncopateregular';
+    src: url('./Font_web/syncopate-regular-webfont.eot');
+    src: url('./Font_web/syncopate-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./Font_web/syncopate-regular-webfont.woff2') format('woff2'),
+         url('./Font_web/syncopate-regular-webfont.woff') format('woff'),
+         url('./Font_web/syncopate-regular-webfont.ttf') format('truetype'),
+         url('./Font_web/syncopate-regular-webfont.svg#syncopateregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Animation */
+
+@keyframes animation2
+{
+	0% 	{
+		opacity: 100%;
+	}
+
+	25%	{
+		opacity: 60%;
+	}
+
+	50%	{
+		opacity: 20%;
+	}
+
+	75%	{
+		opacity: 60%;
+	}
+
+	100%	{
+		opacity: 100%;
+	}
+}
+
+/* background website */
+
+body {
+	background-color: #303030;
+}
+
+h1, h2, h3 {
+/*	color: */
+  font-family: "syncopateregular", sans-serif;
+  text-transform: uppercase;
+}
+
+#divprincipal {
+	position: relative;
+	z-index: 2;
+	background-color: #D2CAEC;
+	color: #303030;
+	font-family: sans-serif;
+	margin: 2% 1% 18% 30%;;
+	padding: 5%;
+	height: 848px;
+	width: 854px;
+	border-radius: 5%;
+box-shadow:
+  0 11.7px 9.8px -5px rgba(0, 0, 0, 0.278),
+  0 23px 33.1px -5px rgba(0, 0, 0, 0.419),
+  0 63px 148px -5px rgba(0, 0, 0, 0.45);
+}
+
+
+
+
+/* Background du site */
+
+.rect-total {
+
+	display: flex;
+	position: relative;
+	z-index: 1;
+	top: 345px;
+
+}
+
+.rect-total:nth-child(1) {
+	top: 345px;
+}
+
+.rect-total:nth-child(2) {
+	top: 445px;
+}
+
+.rect-total:nth-child(3) {
+	top: 545px;
+}
+
+.backrect {
+	background-color: #98eff9;
+	width: 100px;
+	height: 15px;
+}
+
+.backrect:nth-child(1) {
+	animation-name: animation2;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+.backrect:nth-child(2) {
+	animation-name: animation2;
+	animation-duration: 5s;
+/*	animation-delay: 5s; */
+	animation-iteration-count: infinite;
+}
+
+.backrect:nth-child(3) {
+	animation-name: animation2;
+	animation-duration: 6s;
+/*	animation-delay: 10s; */
+	animation-iteration-count: infinite;
+}
+
+.backrect:nth-child(4) {
+	animation-name: animation2;
+	animation-duration: 7s;
+/*	animation-delay: 15s; */
+	animation-iteration-count: infinite;
+}
+
+.backrect:nth-child(5) {
+	animation-name: animation2;
+	animation-duration: 8s;
+/*	animation-delay: 20s; */
+	animation-iteration-count: infinite;
+}

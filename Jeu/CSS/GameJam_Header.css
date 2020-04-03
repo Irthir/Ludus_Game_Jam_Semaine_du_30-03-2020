@@ -1,0 +1,136 @@
+/* Ajout font */
+@font-face {
+    font-family: 'syncopateregular';
+    src: url('./Font_web/syncopate-regular-webfont.eot');
+    src: url('./Font_web/syncopate-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./Font_web/syncopate-regular-webfont.woff2') format('woff2'),
+         url('./Font_web/syncopate-regular-webfont.woff') format('woff'),
+         url('./Font_web/syncopate-regular-webfont.ttf') format('truetype'),
+         url('./Font_web/syncopate-regular-webfont.svg#syncopateregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*Spécial HEADER */
+
+header.main-header {
+	width: 100%;
+	height: 70%;
+	background-color: transparent;
+}
+
+
+/* Logo */
+#Woobie_logo {
+	width: 50px;
+	height: 50px;
+	border-radius: 20%;
+}
+
+
+/* bar navigation */
+
+ul {
+
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+	justify-content: space-around;
+}
+
+#menu-main-menu {
+	margin-top: 100px;
+}
+
+
+li a {
+  padding: 14px 16px;	
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /*ôte le soulignement de la balise ancre <a> */
+  text-align: center;
+  font-family: "syncopateregular", sans-serif;
+  color: #D2CAEC;
+  border-bottom: 4px solid transparent;
+
+
+}
+
+li a:hover {
+
+  /* background-color: #111; */
+  	
+  color: #98eff9;
+  border-bottom-color: #98eff9;/* ou #4efd54 */
+
+}
+
+  /* Flip animation */
+
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 100px;
+  perspective: 1000px;
+  margin-left: 35%;
+  margin-top: 5%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow:
+  0 11.7px 9.8px -5px rgba(0, 0, 0, 0.278),
+  0 23px 33.1px -5px rgba(0, 0, 0, 0.419),
+  0 63px 148px -5px rgba(0, 0, 0, 0.45)
+;
+
+}
+
+.flip-card:focus {
+    outline: 0;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner{
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background: #98eff9;
+  color: white;
+  font-family: "syncopateregular", sans-serif;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  background: #98eff9;
+  color: white;
+  font-family: "syncopateregular", sans-serif;
+  transform: rotateY(180deg);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
