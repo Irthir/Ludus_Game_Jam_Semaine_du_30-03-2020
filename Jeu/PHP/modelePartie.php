@@ -67,31 +67,31 @@
 		{
 			$this->IDPartie=$idpartie;
 		}*/
-		public function getPseudo($pseudo)
+		public function setPseudo($pseudo)
 		{
 			$this->Pseudo=$pseudo;
 		}
-		public function getIDNiveau($idniveau)
+		public function setIDNiveau($idniveau)
 		{
 			$this->IDNiveau=$idniveau;
 		}
-		public function getDatePartie($datepartie)
+		public function setDatePartie($datepartie)
 		{
 			$this->DatePartie=$datepartie;
 		}
-		public function getScore($score)
+		public function setScore($score)
 		{
 			$this->Score=$score;
 		}
-		public function getMinutes($minutes)
+		public function setMinutes($minutes)
 		{
 			$this->Minutes=$minutes;
 		}
-		public function getSecondes($secondes)
+		public function setSecondes($secondes)
 		{
 			$this->Secondes=$secondes;
 		}
-		public function getMillisecondes($millisecondes)
+		public function setMillisecondes($millisecondes)
 		{
 			$this->Millisecondes=$millisecondes;
 		}

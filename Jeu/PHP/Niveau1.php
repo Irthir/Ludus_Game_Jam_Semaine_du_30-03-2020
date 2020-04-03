@@ -1,7 +1,42 @@
 <?php
     session_start();
 	require_once 'modeleJoueur.php';
-	$Niveau="Niveau 1";
+	require_once 'modelePartie.php';
+	require_once 'modePartieManager.php';
+	require_once "ConnexionALaBDD.php";
+	$_SESSION['IDNiveau']="Niveau1";
+	echo var_dump($_REQUEST);
+	if (isset($_REQUEST['Victoire']))
+	{
+		if (isset($_SESSION['IDNiveau']) && isset($_SESSION['Joueur']))
+		{
+			$DatePartie = date("Y-m-d H:i:s");
+			$connexion=ConnexionBDD();
+			$MonPartieManager = new PartieManager($connexion);
+			$mPartie = array
+			(
+				"Pseudo" => $_SESSION['Joueur'],
+				"IDNiveau" => $_SESSION['IDNiveau'],
+				"DatePartie" => $DatePartie,
+				"Score" => $_COOKIE['Score'],
+				"Minutes" => $_COOKIE['Minutes'],
+				"Secondes" => $_COOKIE['Secondes'],
+				"Millisecondes" => $_COOKIE['Millisecondes']
+			);
+
+			$partie = new Partie;
+
+			$partie->hydrate($mPartie);
+
+			$MonPartieManager->addPartie($partie);
+		}
+		else
+		{
+			echo "<script>console.log(\"Niveau ou Joueur manquant.\");</script>";
+			var_dump(isset($_SESSION['IDNiveau']));
+			var_dump(isset($_SESSION['Joueur']));
+		}
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +54,7 @@
 			<div class="flip-card" tabIndex="0">
 			  <div class="flip-card-inner">
 			    <div class="flip-card-front">
-			      <h3> <?php echo "$Niveau"; ?> !</h3>
+			      <h3> <?php echo $_SESSION['IDNiveau']; ?> !</h3>
 			    </div>
 			    <div class="flip-card-back">
 			      <h3> Laboolatory </h3>
@@ -87,11 +122,21 @@
 			</p>
 		</div>
 
-		<script type="text/javascript" src="../JS/SystemeScore.js"></script>
+		<form name="VictoireForm" id="VictoireForm" method="post" action="#">
+			<input type="hidden" name="Victoire" id="Victoire" value="Victoire">
+		</form>
+
+
+		<script type="text/javascript" src="../JS/SystemeScore.js">
+		</script>
 
 		<button onclick="CreatVarDebut()">Debut</button>
 		<button onclick="CreatVarFin()">Fin</button>
 		<button onclick="ValeurCookie()">Cookies</button>
+
+		<?php
+		var_dump($_COOKIE);
+		?>
 
 		<footer id="BFooter" class="site-footer">
 			<h3 id="Contacts" name="Contacts" class="Footer-item">Contacts :</h3>

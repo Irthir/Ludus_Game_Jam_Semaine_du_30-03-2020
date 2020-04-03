@@ -1,12 +1,13 @@
 
 function CreatVarDebut()
 {
-    document.cookie="";
     DateDebut = Date.now();
     DateMelissandre = new Date; //Melissandre mange les cookies si on les laisse trainer trop longtemps.
     DateMelissandre.setMonth(DateMelissandre.getMonth()+1); //Mise en place de la date de fin du cookie dans un mois. Même si Melissandre attend plutôt 15 minutes max pour les manger en général.
+    DateMelissandre=DateMelissandre.toUTCString();
     console.log("Date Debut = "+DateDebut);
     document.cookie="date_debut="+DateDebut+"; expires="+DateMelissandre+"; path=/";
+    console.log(DateMelissandre);
 }
 
 function CreatVarFin()
@@ -14,8 +15,10 @@ function CreatVarFin()
     DateFin = Date.now();
     DateMelissandre = new Date; //Melissandre mange les cookies si on les laisse trainer trop longtemps.
     DateMelissandre.setMonth(DateMelissandre.getMonth()+1); //Mise en place de la date de fin du cookie dans un mois. Même si Melissandree attend plutôt 15 minutes max pour les manger en général.
+    DateMelissandre=DateMelissandre.toUTCString();
     console.log("Date Fin = "+DateFin);
     document.cookie="date_fin="+DateFin+"; expires="+DateMelissandre+"; path=/";
+    console.log(DateMelissandre);
 }
 
 function ValeurCookie()
@@ -53,10 +56,14 @@ function ValeurCookie()
             //Création des cookies.
             DateMelissandre = new Date; //Melissandre mange les cookies si on les laisse trainer trop longtemps.
             DateMelissandre.setMonth(DateMelissandre.getMonth()+1); //Mise en place de la date de fin du cookie dans un mois. Même si Melissance attend plutôt 15 minutes max pour les manger en général.
+            DateMelissandre=DateMelissandre.toUTCString();
             document.cookie="Score="+Score+"; expires="+DateMelissandre+"; path=/";
             document.cookie="Minutes="+Minutes+"; expires="+DateMelissandre+"; path=/";
             document.cookie="Secondes="+Secondes+"; expires="+DateMelissandre+"; path=/";
             document.cookie="Millisecondes="+Millisecondes+"; expires="+DateMelissandre+"; path=/";
+
+
+            document.getElementById('VictoireForm').submit();
         }
         else
         {
