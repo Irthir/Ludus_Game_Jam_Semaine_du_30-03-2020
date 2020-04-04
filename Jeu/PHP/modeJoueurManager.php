@@ -53,7 +53,7 @@
 				echo "<script>console.log(\"Erreur : ".$e->getMessage()."\");</script>";
 				echo "<h2 style='color : red'>Pseudonyme : \"".$joueur->getPseudo()."\" déjà enregistré, était-ce vous ?</h2>";
 				global $Oubli;
-				$Oubli="<a href='./MotDePasseOublie.php'>Mot de passe oublié ?</a><br/>";
+				$Oubli="<a href='MotDePasseOublie.php'>Mot de passe oublié ?</a><br/>";
 			}
 		}
 
@@ -95,7 +95,7 @@
 					echo "<script>console.log(\"Aucun résultat pour : Pseudo = $pseudo MDP = $mdp.\");</script>";
 					echo "<h2 style='color : red'>Pseudonyme ou mot de passe incorrect.</h2>";
 					global $Oubli;
-					$Oubli="<a href='./PHP/MotDePasseOublie.php'>Mot de passe oublié ?</a><br/>";
+					$Oubli="<a href='MotDePasseOublie.php'>Mot de passe oublié ?</a><br/>";
 				}
 				else
 				{
