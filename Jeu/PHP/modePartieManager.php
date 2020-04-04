@@ -48,7 +48,7 @@
 				$stmt->closeCursor();
 
 				//On indique que l'insertion s'est bien passée
-				echo "<script>console.log(\"Insertion des données partie effectuée\");</script>";		
+				echo  		
 			}
 			catch(PDOException $e)
 			{

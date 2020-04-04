@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	require_once 'modeleJoueur.php';
+	if (!isset($_SESSION['Joueur']))
+	{
+		header("Location:./Deconnexion.php");
+	}
 ?>
 
 <!DOCTYPE html>

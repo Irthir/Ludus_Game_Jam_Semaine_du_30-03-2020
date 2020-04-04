@@ -5,10 +5,9 @@
 	require_once 'modePartieManager.php';
 	require_once "ConnexionALaBDD.php";
 	$_SESSION['IDNiveau']="Niveau1";
-	echo var_dump($_REQUEST);
 	if (isset($_REQUEST['Victoire']))
 	{
-		if (isset($_SESSION['IDNiveau']) && isset($_SESSION['Joueur']))
+		if (isset($_SESSION['Joueur']))
 		{
 			$DatePartie = date("Y-m-d H:i:s");
 			$connexion=ConnexionBDD();
@@ -32,9 +31,7 @@
 		}
 		else
 		{
-			echo "<script>console.log(\"Niveau ou Joueur manquant.\");</script>";
-			var_dump(isset($_SESSION['IDNiveau']));
-			var_dump(isset($_SESSION['Joueur']));
+			header("Location:./Deconnexion.php");
 		}
 	}
 ?>
