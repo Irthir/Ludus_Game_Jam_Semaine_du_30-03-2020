@@ -1,18 +1,19 @@
 <?php
+session_start();
 /*
 	********************************************************************************************
 	CONFIGURATION
 	********************************************************************************************
 */
 // destinataire est votre adresse mail. Pour envoyer à plusieurs à la fois, séparez-les par une virgule
-$destinataire = 'r.schlotter@ludus-academie.com';
+$destinataire = 'r.schlotter@ludus-academie.com,g.piou@ludus-academie.com';
 
 
 
 // Messages de confirmation du mail
 $message_envoye = "Votre message nous est bien parvenu !";
 $message_non_envoye = "L'envoi du mail a échoué, veuillez réessayer SVP.";
- 
+
 // Messages d'erreur du formulaire
 $message_erreur_formulaire = "Vous devez d'abord <a href=\"contact.html\">envoyer le formulaire</a>.";
 $message_formulaire_invalide = "Vérifiez que tous les champs soient bien remplis et que l'email soit sans erreur.";
@@ -109,19 +110,19 @@ else
 				$num_emails++;
 		}
  
-		if ((($copie == 'oui') && ($num_emails == 2)) || (($copie == 'non') && ($num_emails == 1)))
+		if ((($copie == 'oui') && ($num_emails >= 1)) || (($copie == 'non') && ($num_emails >= 1)))
 		{
-			echo '<p>'.$message_envoye.'</p>';
+			echo '<p>'.$message_envoye.' <a href="../Contact.php">Retour aux contacts.</a></p>';
 		}
 		else
 		{
-			echo '<p>'.$message_non_envoye.'</p>';
+			echo '<p>'.$message_non_envoye.' <a href="../Contact.php">Retour aux contacts.</a></p>';
 		};
 	}
 	else
 	{
 		// une des 3 variables (ou plus) est vide ...
-		echo '<p>'.$message_formulaire_invalide.' <a href="../Contact.php">Retour au formulaire</a></p>'."\n";
+		echo '<p>'.$message_formulaire_invalide.' <a href="../Contact.php">Retour aux contacts.</a></p>'."\n";
 	};
 }; // fin du if (!isset($_REQUEST['envoi']))
 ?>

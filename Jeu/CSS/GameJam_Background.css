@@ -49,6 +49,14 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+h1{
+	margin: 10% 0% 10% 0%;
+}
+
+h2 {
+	margin-bottom: 5%;
+}
+
 #divprincipal {
 	position: relative;
 	z-index: 2;
@@ -66,7 +74,40 @@ box-shadow:
   0 63px 148px -5px rgba(0, 0, 0, 0.45);
 }
 
+#divprincipaljeu {
+	position: relative;
+	z-index: 2;
+	background-color: #D2CAEC;
+	color: #303030;
+	font-family: sans-serif;
+	margin: 2% 1% 18% 30%;;
+	padding: 1% 5% 12% 5%;
+	height: 848px;
+	width: 854px;
+	border-radius: 5%;
+box-shadow:
+  0 11.7px 9.8px -5px rgba(0, 0, 0, 0.278),
+  0 23px 33.1px -5px rgba(0, 0, 0, 0.419),
+  0 63px 148px -5px rgba(0, 0, 0, 0.45);
+}
 
+
+#divprincipalInscCo {
+	position: relative;
+	z-index: 2;
+	background-color: #D2CAEC;
+	color: #303030;
+	font-family: sans-serif;
+	margin: 2% 1% 18% 30%;;
+	padding: 1% 5% 12% 5%;
+	height: 646px;
+	width: 854px;
+	border-radius: 5%;
+box-shadow:
+  0 11.7px 9.8px -5px rgba(0, 0, 0, 0.278),
+  0 23px 33.1px -5px rgba(0, 0, 0, 0.419),
+  0 63px 148px -5px rgba(0, 0, 0, 0.45);
+}
 
 
 /* Background du site */

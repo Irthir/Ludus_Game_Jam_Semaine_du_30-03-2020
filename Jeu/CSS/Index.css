@@ -10,12 +10,8 @@ body
 fieldset
 {
 	display: inline-block;
-}
-
-footer
-{
-	display:flex;
-	justify-content: center;
+	text-align: center;
+	vertical-align: middle;
 }
 
 a

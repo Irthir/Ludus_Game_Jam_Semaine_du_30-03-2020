@@ -48,7 +48,7 @@
 				$stmt->closeCursor();
 
 				//On indique que l'insertion s'est bien passée
-				echo  		
+				echo  "<script>console.log(\"Insertion réussit dans la BDD.\");</script>";
 			}
 			catch(PDOException $e)
 			{
