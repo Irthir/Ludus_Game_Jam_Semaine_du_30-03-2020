@@ -214,23 +214,26 @@
 			}
 			
 		?>
-		
-		<h2>Présentation : </h2>
-		
-		<p id="texte"> 
-			Remplacer le canva par l'écran du jeu<BR/>
-		
-			texte texte texte texte .
-			<BR/>
-			texte texte texte texte texte texte texte texte texte texte texte texte <BR/>
-			<BR/>
-			texte texte texte texte texte texte texte texte texte texte texte texte <BR/>
-			
-			<BR/>
-			texte texte texte texte texte texte texte texte texte texte texte texte <BR/>
-			<BR/>
-			texte texte texte texte texte texte texte texte texte texte texte texte <BR/>
-		
+		<p id="texte">
+			Le but est de déplacer un robot (unit) vers la sortie afin de passer les niveaux. <br/>
+			Chaque porte possède une formule, placé votre curseur sur la porte pour afficher la formule.<br/>
+			Afin de déplacer vos robots, vous avez à disposition 4 fonctions.<br/><br/>
+		<p>
+		<ul>
+			<li>unit<strong>x</strong>.moveUp();</li>
+			<li>unit<strong>x</strong>.moveDown();</li>
+			<li>unit<strong>x</strong>.moveLeft();</li>
+			<li>unit<strong>x</strong>.moveRight();</li>
+		</ul>
+				
+		<p>
+			<strong>x</strong> étant le numéro du robot.<br/>
+
+			Déplacer vos robots sur les boutons permettant la résolution des formules. <br/>
+			Les boutons ne sont actionnés que si un robot reste dessus.<br/>
+			- n(<strong>x</strong>) signifie que le bouton x ne doit pas être pressé.<br/>
+			- <strong>x</strong> . <strong>y</strong> signifie qu'il faut que les conditions x et y soient respectées.<br/>
+			- <strong>x</strong> + <strong>y</strong> signifie qu'il faut que l'une des conditions entre x et y soit respectée.<br/>
 		</p>
 
 		

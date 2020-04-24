@@ -196,8 +196,8 @@
 		';
 
 		foreach($maConn->query($req) as $row) {
-			$xUnit = 320 - ($wMap-1) * 25 + $row['xUnit'] * 50;
-			$yUnit = 445 - ($hMap-1) * 25 + $row['yUnit'] * 50;
+			$xUnit = 320 - ($wMap-1) * 25 + $row['xUnit'] * 50 + 10;
+			$yUnit = 445 - ($hMap-1) * 25 + $row['yUnit'] * 50 + 10;
 			echo('
 				<div class="unit" id="unit'.$row['idUnit'].'" title="unit'.$row['idUnit'].'" style="
 					left: '.$xUnit.'px;
@@ -271,7 +271,7 @@
 			echo('
 						if(move == 1) {
 							Unit'.$row['idUnit'].'.y--;
-							position = 445 - ('.$hMap.'-1) * 25 + Unit'.$row['idUnit'].'.y * 50;
+							position = 445 - ('.$hMap.'-1) * 25 + Unit'.$row['idUnit'].'.y * 50 + 10;
 							document.getElementById("unit'.$row['idUnit'].'").style.top = position+"px";
 						}
 					}
@@ -335,7 +335,7 @@
 			echo('
 						if(move == 1) {
 							Unit'.$row['idUnit'].'.y++;
-							position = 445 - ('.$hMap.'-1) * 25 + Unit'.$row['idUnit'].'.y * 50;
+							position = 445 - ('.$hMap.'-1) * 25 + Unit'.$row['idUnit'].'.y * 50 + 10;
 							document.getElementById("unit'.$row['idUnit'].'").style.top = position+"px";
 						}
 					}
@@ -399,7 +399,7 @@
 			echo('
 						if(move == 1) {
 							Unit'.$row['idUnit'].'.x--;
-							position = 320 - ('.$wMap.'-1) * 25 + Unit'.$row['idUnit'].'.x * 50;
+							position = 320 - ('.$wMap.'-1) * 25 + Unit'.$row['idUnit'].'.x * 50 + 10;
 							document.getElementById("unit'.$row['idUnit'].'").style.left = position+"px";
 						}
 					}
@@ -464,7 +464,7 @@
 						console.log(move);
 						if(move == 1) {
 							Unit'.$row['idUnit'].'.x++;
-							position = 320 - ('.$wMap.'-1) * 25 + Unit'.$row['idUnit'].'.x * 50;
+							position = 320 - ('.$wMap.'-1) * 25 + Unit'.$row['idUnit'].'.x * 50 + 10;
 							document.getElementById("unit'.$row['idUnit'].'").style.left = position+"px";
 						}
 					}
