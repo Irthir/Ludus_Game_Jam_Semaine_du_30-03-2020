@@ -215,9 +215,9 @@
 			
 		?>
 		<p id="texte">
-			Le but est de déplacer un robot (unit) vers la sortie afin de passer les niveaux. <br/>
-			Chaque porte possède une formule, placé votre curseur sur la porte pour afficher la formule.<br/>
-			Afin de déplacer vos robots, vous avez à disposition 4 fonctions.<br/><br/>
+			Le but est de déplacer un robot (unit) vers la sortie afin de compléter les niveaux.<br/>
+			Chaque porte possède une formule, placez votre curseur sur la porte pour l'afficher.<br/>
+			Afin de déplacer vos robots, vous avez 4 fonctions à votre disposition..<br/><br/>
 		<p>
 		<ul>
 			<li>unit<strong>x</strong>.moveUp();</li>
@@ -231,9 +231,9 @@
 
 			Déplacer vos robots sur les boutons permettant la résolution des formules. <br/>
 			Les boutons ne sont actionnés que si un robot reste dessus.<br/>
-			- n(<strong>x</strong>) signifie que le bouton x ne doit pas être pressé.<br/>
+			- n(<strong>x</strong>) signifie que le bouton x ne doit pas être actionné.<br/>
 			- <strong>x</strong> . <strong>y</strong> signifie qu'il faut que les conditions x et y soient respectées.<br/>
-			- <strong>x</strong> + <strong>y</strong> signifie qu'il faut que l'une des conditions entre x et y soit respectée.<br/>
+			- <strong>x</strong> + <strong>y</strong>  signifie qu'il faut que l'une des conditions entre x et y soit respectée.<br/>
 		</p>
 
 		

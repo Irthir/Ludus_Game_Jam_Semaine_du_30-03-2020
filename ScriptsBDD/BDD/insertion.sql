@@ -299,7 +299,7 @@ VALUES
 INSERT INTO Door(idMap,idDoor,xDoor,yDoor,formula)
 VALUES
 	(8,1,4,0,"a . b . c +  a . n(b) . c + a . b . n(c)"),
-	(8,2,2,3,"a . b + n(a) . c + n(n(a)) . c + n(a) . c");
+	(8,2,2,3,"a . b + n(a) . b + n(n(a)) . c + n(a) . c");
 
 INSERT INTO Button(idMap,idButton,xButton,yButton)
 VALUES
@@ -340,7 +340,8 @@ INSERT INTO Unit(idMap,idUnit,xUnit,yUnit)
 VALUES
 	(9,1,1,1),
 	(9,2,3,3),
-	(9,3,5,3);
+	(9,3,4,3),
+	(9,4,5,3);
 
 INSERT INTO Door(idMap,idDoor,xDoor,yDoor,formula)
 VALUES
@@ -358,9 +359,9 @@ VALUES
 INSERT INTO PossibleFormula(idMap,idDoor,idFormula)
 VALUES
 	(9,1,16),
-	(9,2,17),
-	(9,3,18),
-	(9,3,19);
+	(9,3,17),
+	(9,2,18),
+	(9,2,19);
 
 INSERT INTO FormulaLink(idFormula,idButton,accept)
 VALUES

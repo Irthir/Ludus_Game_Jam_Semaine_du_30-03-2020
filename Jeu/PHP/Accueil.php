@@ -96,16 +96,16 @@
 
 	<h2>Bienvenue <?php if (isset($_SESSION["Joueur"])){echo $_SESSION["Joueur"];}?> !</h2>
 
-	<p style="width: 75%;"> Le projet "Laboolatory" fut créer par 4 quatre personnes à la suite d'un défi de Jam. Voici ce qu'a aboutis le travail après 1 mois de travail à domicile pendant la période de confinement.<BR/>
+	<p style="width: 75%;"> Le projet "Laboolatory" fut créé par 4 quatre personnes pendant une Game Jam. Voici le résultat du projet après 1 mois de travail à domicile durant la période de confinement.<BR/>
 
 
 	<BR/>
-	Le but du projet était de faire un sérious game pour apprendre de manière ludique une matière. <BR/>
+	Le but du projet était de réaliser un sérious game pour acquérir ou approfondir ses connaissances sur un domaine précis de la programmation, et ce de manière ludique. <BR/>
 	<BR/>
-	Nous nous sommes focalisés sur l'algèbre de Boole ainsi que sur la programmation. <BR/>
+	Nous nous sommes donc focalisés sur l'algèbre de Boole. <BR/>
 
 	<BR/>
-	Le jeu est un jeu de puzzle par lequel il faut, à l'aide de programmation, déplacé un ou des robots sur les boutons avec la réponse attendu pour l'énigme sur la porte. <BR/>
+	Le jeu est un jeu de puzzle par lequel il faut, via des appels de fonction, déplacer des robots sur des boutons afin d'ouvrir des portes à l'aide de formule écrites sur chacune d'entre elles. <BR/>
 	<BR/>
 
 
