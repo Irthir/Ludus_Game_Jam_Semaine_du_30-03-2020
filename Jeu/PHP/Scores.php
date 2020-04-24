@@ -1,6 +1,9 @@
 <?php
 	session_start();
+	require_once "ConnexionALaBDD.php";
+	$connexion=ConnexionBDD();
 	require_once 'modeleJoueur.php';
+	require_once 'modePartieManager.php';
 	if (!isset($_SESSION['Joueur']))
 	{
 		header("Location:./Deconnexion.php");
@@ -11,7 +14,48 @@
 <HTML>
 	<HEAD> <!--Information de configuration : encodage, langue,...-->
 		<link rel="shortcut icon" type="image/x-icon" href="../img_web/header_img/Woobie.png">
-
+		<style type="text/css">
+			table, th, td
+			{
+				border: 1px solid black;
+				width: auto;
+				height: auto;
+				margin: auto;
+			}
+			table
+			{
+				border-collapse: collapse;
+				text-align: center;
+				width: 90%
+			}
+			#divprincipal
+			{
+				vertical-align: middle;
+			}
+			form
+			{
+				margin: auto;
+				background-color : #354351;
+				margin: auto;
+				padding: auto;
+				text-align: center;
+				height: auto;
+				width: auto;
+				vertical-align: middle;
+				padding-top: 35%;
+				padding-bottom: 40%;
+			}
+			select
+			{
+				margin: auto;
+				padding: auto;
+				height: auto;
+				width: auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
 		<link rel="stylesheet" type="text/css" href="../CSS/GameJam_Header.css">
 		<link rel="stylesheet" type="text/css" href="../CSS/GameJam_Background.css">
 		<link rel="stylesheet" type="text/css" href="../CSS/GameJam_Footer.css">
@@ -23,9 +67,10 @@
 		<TITLE>Accueil</TITLE>
 	</HEAD>
 
-	<body onload="masquer_conn(text1); masquer_insc(text2);">
-
-	<header id="Bheader" name="Bheader" class="main-header">
+	<BODY>
+	<!--<body onload="masquer_conn(text1); masquer_insc(text2);">-->
+ 
+	<header id="Bheader" name="Bheader" class="main-header" style="height: auto;">
 		<!-- text au-dessus flip-->
 		<div class="flip-card" tabIndex="0">
 		  <div class="flip-card-inner">
@@ -46,8 +91,11 @@
 
 		    		<div class="separation"></div>
 
+		    		<li id="menu-item-Score" class="menu-item">
+		                <a href="Scores.php">Autres Scores</a>
+		            </li>
 		        	<li id="menu-item-Accueil" class="menu-item">
-		                <a href="Scores.php">Tableau des Scores</a>
+		                <a href="Accueil.php">Accueil</a>
 		            </li>
 		            <li id="menu-item-Jeu" class="menu-item">
 		                <a href="GameJam_jeu_2020.php">Jeu</a>
@@ -92,32 +140,35 @@
 
 	<div id="divprincipal" name="divprincipal" class="visu">
 
-	<h1>Accueil</h1>
-
-	<h2>Bienvenue <?php if (isset($_SESSION["Joueur"])){echo $_SESSION["Joueur"];}?> !</h2>
-
-	<p style="width: 75%;"> Le projet "Laboolatory" fut créer par 4 quatre personnes à la suite d'un défi de Jam. Voici ce qu'a aboutis le travail après 1 mois de travail à domicile pendant la période de confinement.<BR/>
-
-
-	<BR/>
-	Le but du projet était de faire un sérious game pour apprendre de manière ludique une matière. <BR/>
-	<BR/>
-	Nous nous sommes focalisés sur l'algèbre de Boole ainsi que sur la programmation. <BR/>
-
-	<BR/>
-	Le jeu est un jeu de puzzle par lequel il faut, à l'aide de programmation, déplacé un ou des robots sur les boutons avec la réponse attendu pour l'énigme sur la porte. <BR/>
-	<BR/>
-
-
-	</p>
-
-	<!--<div id="liens" name="liens">
-
-	<a href="GameJam_inscription_2020.html" id="Insc" name="Insc" title="Inscription au jeu">Inscription</a>
-
-	<a href="GameJam_connexion_2020.html" id="Connex" name="Connex" title="Connexion à son compte">Connexion</a>
-
-	</div>-->
+		<?php
+			if (isset($_REQUEST["SelectionNiveau"]))
+			{
+				$PartieManager=new PartieManager($connexion);
+				$PartieManager->afficheTableauScore($connexion,$_REQUEST["SelectionNiveau"]);
+			}
+			else
+			{
+				echo('
+					<form action="#" method="POST" >
+					    <select class="select" name="SelectionNiveau" required>
+				');
+				$req = '
+					SELECT * FROM niveau
+						ORDER BY IDNiveau;
+				';
+				foreach($connexion->query($req) as $row) {
+					echo('
+						<option value="'.$row['IDNiveau'].'">'.$row['IDNiveau'].'</option>
+					');
+				}
+				echo('
+						</select>
+						<br/><br/><br/><br/>
+						<input class="clickable" type="submit" name="chooseMap" value="Choisir ce Niveau">
+					</form>
+				');
+			}
+		 ?>
 
 	</div>
 

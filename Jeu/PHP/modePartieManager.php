@@ -55,6 +55,44 @@
 				echo "<script>console.log(\"Erreur : ".$e->getMessage()."\");</script>";
 			}
 		}
+
+		public function afficheTableauScore($connexion,$Niveau)
+		{
+			$mareq='SELECT Pseudo, Minutes, Secondes, Millisecondes FROM Partie WHERE IDNiveau="'.$Niveau.'" ORDER BY Score ASC LIMIT 10;';
+			$statement=$connexion->prepare($mareq);
+			$statement->execute();
+			$nb=$statement->rowcount();
+			$Classement=1;
+			if ($nb>0)
+			{
+				$result = $statement->setFetchMode(PDO::FETCH_ASSOC);
+				//vérifier result si le fetch a fonctionné.
+				echo '<table class="TableAffiche"><caption><h1 style="text-decoration: underline;">Tableau des Scores du Niveau '.substr($Niveau, 6).'<h1></caption><thead><tr>';
+				echo "<th><h3 style='font-weight:bold;'>Classement</h3></th>";
+				foreach (array_keys($statement->fetchAll()[0]) as $value)
+				{
+					echo "<th><h3 style='font-weight:bold;'>".$value."</h3></th>";
+				}
+				$statement=$connexion->prepare($mareq);
+				$statement->execute();
+				$result = $statement->setFetchMode(PDO::FETCH_ASSOC); //permet de passer en tableau associatif uniquement.
+				echo "</tr></thead>";
+				echo "<tbody>";
+				foreach ($statement as $row)
+				{
+					echo "<tr>";
+					echo "<td>".$Classement."</td>";
+					foreach ($row as $key => $value)
+					{
+						echo"<td class='".$key."'>".$value."</td>";
+					}
+					echo "</tr>";
+					$Classement=$Classement+1;
+				}
+				echo "</tbody>";
+				echo "</table>";
+			}
+		}
 	}
 
 ?>

@@ -108,9 +108,10 @@
 				<LEGEND><h3>Connexion : </h3></LEGEND>
 				<br/>
 				<label for="Pseudo">Pseudonyme : </label><br/><input type="text" name="Pseudo" id="Pseudo" placeholder="Saisir votre Pseudonyme"  required="required" title="Entrer votre pseudonyme"><br/>
-				<label for="MDP">Mot de Passe :</label><br/><input type="password" name="MDP" id="motdepasse" placeholder="Saisir votre mot de passe"  required="required" title="Entrer votre mot de passe"><br/><br/>
-				<div><input type="submit" name="submit" value="Connexion" class="valider" style="left: 0%">
-				<input type="button" name="inscription" value="Inscription" class="valider" onclick="location.href='Inscription.php'" style="right: 0%"></div>
+				<label for="MDP">Mot de Passe :</label><br/><input type="password" name="MDP" id="motdepasse" placeholder="Saisir votre mot de passe"  required="required" title="Entrer votre mot de passe"><br/><br/><br/>
+				<div><input type="submit" name="submit" value="Connexion" class="valider" style="margin: auto;">
+				<input type="reset" class="valider" name="reset" value="Réinitialiser" onclick="location.href='Connexion.php'" style="margin: auto;">
+				<input type="button" name="inscription" value="Inscription" class="valider" onclick="location.href='Inscription.php'" style="margin: auto;"></div>
 			</fieldset>
 			</form>
 			<p name="MotDePasseOublie" id="MotDePasseOublie">
